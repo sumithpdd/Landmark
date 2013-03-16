@@ -137,8 +137,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Tiles\Tile_map_explorer_159x159.png" />
+    <Content Include="Assets\Tiles\Tile_map_explorer_336x336.png" />
+    <Content Include="Assets\Tiles\Tile_map_explorer_691x336.png" />
     <Resource Include="Assets\PanoramaBackground.png" />
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\appbar.feature.search.rest.png" />
+    <Content Include="Assets\appbar.feature.settings.rest.png" />
+    <Content Include="Assets\appbar.locate.me.png" />
+    <Content Include="Assets\appbar.show.route.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
