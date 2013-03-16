@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data.Linq;
+﻿using System.ComponentModel;
 using System.Data.Linq.Mapping;
-using System.Windows.Media.Imaging;
 
-namespace Asos.DailyEdit.Wp8.DomainModel
+namespace Landmark.Dev4Good.WP.Classes
 {
     [Table]
     public class Category : INotifyPropertyChanged, INotifyPropertyChanging

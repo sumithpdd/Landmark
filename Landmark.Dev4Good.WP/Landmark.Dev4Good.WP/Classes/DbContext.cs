@@ -1,5 +1,4 @@
 ﻿using System.Data.Linq;
-using Asos.DailyEdit.Wp8.DomainModel;
 
 namespace Landmark.Dev4Good.WP.Classes
 {
