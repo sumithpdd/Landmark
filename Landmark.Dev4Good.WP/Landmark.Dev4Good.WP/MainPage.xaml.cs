@@ -29,5 +29,14 @@ namespace Landmark.Dev4Good.WP
                 App.ViewModel.LoadData();
             }
         }
+
+        private void CreateGame_OnClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(
+                 new Uri(
+                     "/MapView.xaml",
+                     UriKind.Relative));
+        }
+         
     }
 }
