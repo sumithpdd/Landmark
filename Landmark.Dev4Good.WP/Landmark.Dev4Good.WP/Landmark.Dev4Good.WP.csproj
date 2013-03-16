@@ -94,6 +94,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Category.cs" />
+    <Compile Include="Classes\ViewLocations.cs" />
     <Compile Include="Classes\DbContext.cs" />
     <Compile Include="Classes\LandmarkConstants.cs" />
     <Compile Include="LocalizedStrings.cs" />
