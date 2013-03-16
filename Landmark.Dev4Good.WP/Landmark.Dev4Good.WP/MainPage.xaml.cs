@@ -32,15 +32,19 @@ namespace Landmark.Dev4Good.WP
 
         private void CreateGame_OnClick(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(
-            //     new Uri(
-            //         "/MapView.xaml",
-            //         UriKind.Relative));
+            NavigationService.Navigate(
+                 new Uri(
+                     "/MapView.xaml",
+                     UriKind.Relative));
+           
+        }
+
+        private void CurrentGameList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             NavigationService.Navigate(
                new Uri(
                    "/SelectedLandmarks.xaml",
                    UriKind.Relative));
         }
-         
     }
 }

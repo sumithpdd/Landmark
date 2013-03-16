@@ -18,13 +18,13 @@ namespace Landmark.Dev4Good.WP.ViewModels
 
          public SelectedLandmarksViewModel()
         {
-            this.SelecctedCustomerLandmarks = new ObservableCollection<CustomerLandmarks>();
+            this.SelectedCustomerLandmarks = new ObservableCollection<CustomerLandmarks>();
 
         }
         /// <summary>
         /// A collection for ItemViewModel objects.
         /// </summary>
-        public ObservableCollection<CustomerLandmarks> SelecctedCustomerLandmarks
+        public ObservableCollection<CustomerLandmarks> SelectedCustomerLandmarks
         {
             get { return _customerLandmarks; }
             private set
@@ -32,17 +32,17 @@ namespace Landmark.Dev4Good.WP.ViewModels
                 if (value != _customerLandmarks)
                 {
                     _customerLandmarks = value;
-                    NotifyPropertyChanged("SelecctedCustomerLandmarks");
+                    NotifyPropertyChanged("SelectedCustomerLandmarks");
                 }
             }
         }
          public void LoadData()
 
         {
-             SelecctedCustomerLandmarks.Add(new CustomerLandmarks(){LandmarkId=1, Title="kensington palace", IsSelected = false});
-             SelecctedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, Title = "kensington palace 2", IsSelected = false });
-             SelecctedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, Title = "kensington palace 3", IsSelected = false });
-             SelecctedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, Title = "kensington palace 4", IsSelected = false });
+             SelectedCustomerLandmarks.Add(new CustomerLandmarks(){LandmarkId=1, Title="kensington palace", IsSelected = false});
+             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, Title = "kensington palace 2", IsSelected = false });
+             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, Title = "kensington palace 3", IsSelected = false });
+             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, Title = "kensington palace 4", IsSelected = false });
             
         }
          public event PropertyChangedEventHandler PropertyChanged;

@@ -10,7 +10,6 @@ namespace Landmark.Dev4Good.WP.Models
     public class CustomerLandmarks : INotifyPropertyChanged
     {
         private int _landmarkId;
-
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>

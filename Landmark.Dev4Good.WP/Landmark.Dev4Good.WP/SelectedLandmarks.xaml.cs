@@ -18,7 +18,7 @@ namespace Landmark.Dev4Good.WP
         /// <summary>
         /// A static ViewModel used by the views to bind against.
         /// </summary>
-        /// <returns>The MainViewModel object.</returns>
+        /// <returns>The SelectedLandmarksViewModel object.</returns>
         public SelectedLandmarksViewModel ViewModel
         {
             get
@@ -40,7 +40,9 @@ namespace Landmark.Dev4Good.WP
             DataContext = ViewModel; 
 
         }
-        private void SelectedLandmarkListu_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+      
+
+        private void SelectedLandmarkList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             throw new NotImplementedException();
         }
