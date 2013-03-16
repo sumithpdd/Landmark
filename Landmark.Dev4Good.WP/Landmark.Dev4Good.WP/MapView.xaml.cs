@@ -33,13 +33,11 @@ namespace Landmark.Dev4Good.WP
             {
                 _isNewInstance = false;
 
-                LoadSettings();
-                if (_isLocationAllowed)
-                {
+                  
                     LocationPanel.Visibility = Visibility.Collapsed;
                     BuildApplicationBar();
                     GetCurrentCoordinate();
-                }
+               
             }
 
             DrawMapMarkers();
@@ -55,7 +53,7 @@ namespace Landmark.Dev4Good.WP
             if (sender == AllowButton)
             {
                 _isLocationAllowed = true;
-                SaveSettings();
+             
                 GetCurrentCoordinate();
             }
         }
@@ -88,7 +86,7 @@ namespace Landmark.Dev4Good.WP
                 if (result == MessageBoxResult.OK)
                 {
                     _isLocationAllowed = true;
-                    SaveSettings();
+                     
                     GetCurrentCoordinate();
                 }
             }
@@ -123,7 +121,7 @@ namespace Landmark.Dev4Good.WP
                 if (result == MessageBoxResult.OK)
                 {
                     _isLocationAllowed = true;
-                    SaveSettings();
+                
                     GetCurrentCoordinate();
                 }
             }
@@ -754,36 +752,7 @@ namespace Landmark.Dev4Good.WP
             ProgressIndicator.IsVisible = false;
             SystemTray.SetProgressIndicator(this, ProgressIndicator);
         }
-
-        /// <summary>
-        /// Helper method to load application settings
-        /// </summary>
-        public void LoadSettings()
-        {
-            if (Settings.Contains("isLocationAllowed"))
-            {
-                _isLocationAllowed = (bool)Settings["isLocationAllowed"];
-            }
-        }
-
-        /// <summary>
-        /// Helper method to save application settings
-        /// </summary>
-        public void SaveSettings()
-        {
-            if (Settings.Contains("isLocationAllowed"))
-            {
-                if ((bool)Settings["isLocationAllowed"] != _isLocationAllowed)
-                {
-                    // Store the new value
-                    Settings["isLocationAllowed"] = _isLocationAllowed;
-                }
-            }
-            else
-            {
-                Settings.Add("isLocationAllowed", _isLocationAllowed);
-            }
-        }
+ 
 
         // Application bar menu items
         private ApplicationBarMenuItem AppBarColorModeMenuItem = null;
