@@ -586,7 +586,9 @@ namespace Landmark.Dev4Good.WP
                 {
                     MyCoordinate = new GeoCoordinate(currentPosition.Coordinate.Latitude, currentPosition.Coordinate.Longitude);
                     DrawMapMarkers();
-                    MyMap.SetView(MyCoordinate, 10, MapAnimationKind.Parabolic);
+                    MyMap.SetView(MyCoordinate, 15, MapAnimationKind.Parabolic);
+                    MyMap.LandmarksEnabled = true;
+                    MyMap.PedestrianFeaturesEnabled = true;
                 });
             }
             catch (Exception ex)
@@ -599,7 +601,7 @@ namespace Landmark.Dev4Good.WP
 
         private void GetLandmarksForLocation()
         {
-            
+           
         }
 
         /// <summary>
