@@ -581,7 +581,7 @@ namespace Landmark.Dev4Good.WP
                 {
                     MyCoordinate = new GeoCoordinate(currentPosition.Coordinate.Latitude, currentPosition.Coordinate.Longitude);
                     DrawMapMarkers();
-                    MyMap.SetView(MyCoordinate, 10, MapAnimationKind.Parabolic);
+                    MyMap.SetView(MyCoordinate, 16, MapAnimationKind.Parabolic);
                 });
             }
             catch (Exception ex)
