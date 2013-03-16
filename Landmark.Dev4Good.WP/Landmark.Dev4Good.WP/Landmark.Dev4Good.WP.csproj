@@ -106,8 +106,12 @@
     <Compile Include="Models\CustomerLandmarks.cs" />
     <Compile Include="Models\QuizData.cs" />
     <Compile Include="Models\QuizItem.cs" />
-    <Compile Include="Models\QuizQuestions.cs" />
-    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Models\QuizQuestions.cs" />   
+     <Compile Include="Properties\Annotations.cs" />
+	<Compile Include="ViewLocations.xaml.cs">
+      <DependentUpon>ViewLocations.xaml</DependentUpon>
+    </Compile> 
+
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuizPage.xaml.cs">
       <DependentUpon>QuizPage.xaml</DependentUpon>
@@ -138,6 +142,10 @@
       <SubType>Designer</SubType>
     </DesignData>
     <Page Include="MapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewLocations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,6 +25,8 @@ namespace Landmark.Dev4Good.WP
         {
             InitializeComponent();
         }
+
+        //main method
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -37,11 +39,14 @@ namespace Landmark.Dev4Good.WP
                     LocationPanel.Visibility = Visibility.Collapsed;
                     BuildApplicationBar();
                     GetCurrentCoordinate();
-               
+                    GetLandmarksForLocation();
+
             }
 
             DrawMapMarkers();
         }
+
+      
 
         /// <summary>
         /// Event handler for location usage permission at startup.
@@ -581,7 +586,9 @@ namespace Landmark.Dev4Good.WP
                 {
                     MyCoordinate = new GeoCoordinate(currentPosition.Coordinate.Latitude, currentPosition.Coordinate.Longitude);
                     DrawMapMarkers();
-                    MyMap.SetView(MyCoordinate, 16, MapAnimationKind.Parabolic);
+                    MyMap.SetView(MyCoordinate, 15, MapAnimationKind.Parabolic);
+                    MyMap.LandmarksEnabled = true;
+                    MyMap.PedestrianFeaturesEnabled = true;
                 });
             }
             catch (Exception ex)
@@ -590,6 +597,11 @@ namespace Landmark.Dev4Good.WP
                 MessageBox.Show(AppResources.LocationDisabledMessageBoxText, AppResources.ApplicationTitle, MessageBoxButton.OK);
             }
             HideProgressIndicator();
+        }
+
+        private void GetLandmarksForLocation()
+        {
+           
         }
 
         /// <summary>
