@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Net;
+using Landmark.Dev4Good.WP.Classes;
 using Landmark.Dev4Good.WP.Resources;
 
 namespace Landmark.Dev4Good.WP.ViewModels
@@ -10,6 +13,18 @@ namespace Landmark.Dev4Good.WP.ViewModels
         public MainViewModel()
         {
             this.Items = new ObservableCollection<ItemViewModel>();
+        }
+           private bool _isDatabaseLoaded = false;
+
+        public bool IsDatabaseLoaded
+        {
+            get { return _isDatabaseLoaded; }
+            set
+            {
+                _isDatabaseLoaded = value;
+                NotifyPropertyChanged("IsDatabaseLoaded");
+
+            }
         }
 
         /// <summary>
@@ -54,7 +69,38 @@ namespace Landmark.Dev4Good.WP.ViewModels
             get;
             private set;
         }
+        /// <summary>
+        /// Loads the data from our "database" and populates the
+        /// Items and Favorites properties
+        /// </summary>
+        public void LoadDatabaseData()
+        {
+            DbContext db = App.Db;
 
+
+            if (db.DatabaseExists() == false)
+            {
+                Debug.WriteLine("Initializing Database from web");
+                // Create the local database.
+                db.CreateDatabase();
+                LoadDataBaseFromWeb();
+            }
+            else
+            {
+                Debug.WriteLine("Database already exists");
+                        LoadDataBaseFromWeb();
+              
+                    this.IsDatabaseLoaded = true;
+               
+            }
+        }
+        private void LoadDataBaseFromWeb()
+        {
+
+            var webClient = new WebClient();
+            
+
+        }
         /// <summary>
         /// Creates and adds a few ItemViewModel objects into the Items collection.
         /// </summary>

@@ -6,6 +6,7 @@ using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using Landmark.Dev4Good.WP.Classes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Landmark.Dev4Good.WP.Resources;
@@ -15,7 +16,8 @@ namespace Landmark.Dev4Good.WP
 {
     public partial class App : Application
     {
-        private static MainViewModel viewModel = null;
+        private static DbContext _db = null;
+        private static MainViewModel _viewModel = null;
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
@@ -26,13 +28,20 @@ namespace Landmark.Dev4Good.WP
             get
             {
                 // Delay creation of the view model until necessary
-                if (viewModel == null)
-                    viewModel = new MainViewModel();
+                if (_viewModel == null)
+                    _viewModel = new MainViewModel();
 
-                return viewModel;
+                return _viewModel;
             }
         }
-
+        public static DbContext Db
+        {
+            get
+            {
+                // Delay creation of the view model until necessary
+                return _db ?? (_db = new DbContext(LandmarkConstants.DbConnectionString));
+            }
+        }
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
@@ -75,6 +84,7 @@ namespace Landmark.Dev4Good.WP
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+            ViewModel.LoadDatabaseData();
 
         }
 
