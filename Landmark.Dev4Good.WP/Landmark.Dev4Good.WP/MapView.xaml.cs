@@ -44,7 +44,6 @@ namespace Landmark.Dev4Good.WP
                     BuildApplicationBar();
                     GetCurrentCoordinate();
                     GetLandmarksForLocation();
-
             }
 
             DrawMapMarkers();
@@ -643,7 +642,7 @@ namespace Landmark.Dev4Good.WP
             }
 
             MyMap.Layers.Add(mapLayer);
-            MyMap.Center = new GeoCoordinate(51.524299, -0.098322);
+            MyMap.Center = new GeoCoordinate(51.496521, -0.176468);
             MyMap.ZoomLevel = 14;
         }
 
