@@ -101,7 +101,7 @@
                                      <TextBlock Grid.Column="1"
                                                Text="{Binding GameName}"  FontSize="20" FontWeight="Bold" Margin="10,0,0,0" Style="{StaticResource TaskNameStyle}"/>
                                         <ProgressBar Height="50" Name="progressBar1" Width="120" Grid.Column="2" 
-                         Value="{Binding CompletedPercent, Mode=OneWay}" Foreground="CornflowerBlue" Background="Azure" BorderThickness="10" />
+                                        Value="{Binding CompletedPercent, Mode=OneWay}" Foreground="CornflowerBlue" Background="Azure" BorderThickness="10" />
  
                                 </Grid>
                                      </Border>

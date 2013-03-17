@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -28,7 +29,9 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <phone:LongListSelector Name="SelectedLandmarkList" Margin="0,0,-22,0" ItemsSource="{Binding SelectedCustomerLandmarks}">
+            <StackPanel>
+            <maps:Map x:Name="MyMap"   LandmarksEnabled="True" PedestrianFeaturesEnabled="True" Height="200"/>
+            <phone:LongListSelector Name="SelectedLandmarkList" Margin="0,0,-22,0" ItemsSource="{Binding SelectedCustomerLandmarks}" SelectionChanged="SelectedLandmarkList_OnSelectionChanged">
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
                         <Border Padding="0, 10, 0, 8" BorderThickness="0, 0, 0, 1" BorderBrush="#01636A">
@@ -73,12 +76,14 @@
                                     </Grid.RowDefinitions>
                                     <TextBlock Grid.Column ="0" Text="{Binding LandmarkName}" FontSize="16" FontWeight="Bold" Grid.Row="0" TextWrapping="Wrap"/>
                                     <CheckBox Grid.Column ="1" Name="checkLandmark" IsChecked="{Binding IsSelected}" ></CheckBox>
-                                </Grid>
+                                        <Image Source="assets/"></Image>
+                                    </Grid>
                             </Grid>
                         </Border>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
+            </StackPanel>
         </Grid>
     </Grid>
 

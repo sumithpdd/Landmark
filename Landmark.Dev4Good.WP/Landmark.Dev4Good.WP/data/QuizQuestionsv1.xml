@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<QuizQuestions>
+  <QuizItem>
+    <id>0001</id>
+    <question>What award did foolproof win recently?</question>
+     
+    <a>Webby Awards</a>
+    <b>DADI Awards</b>
+    <c>COGS</c>
+    <d>Top 100 company to work for</d>
+    <answer>D</answer>
+    <information></information>
+  </QuizItem>
+   
+</QuizQuestions>

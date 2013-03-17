@@ -198,6 +198,9 @@
     </Content>
     <Content Include="Assets\innerPagesBackground.jpg" />
     <Content Include="Assets\place.png" />
+    <Content Include="data\QuizQuestionsv1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Assets\trophy.gif" />
     <Resource Include="Assets\Congrats.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

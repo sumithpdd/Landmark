@@ -46,5 +46,14 @@ namespace Landmark.Dev4Good.WP
         //{
         //    throw new NotImplementedException();
         //}
+      
+
+        private void SelectedLandmarkList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            NavigationService.Navigate(
+               new Uri(
+                   "/QuizPage.xaml",
+                   UriKind.Relative));
+        }
     }
 }

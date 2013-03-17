@@ -15,6 +15,7 @@ namespace BarGame
     public partial class QuizPage : PhoneApplicationPage
     {
 
+
         private List<QuizItem> _quizItem;
         private QuizItem _curQuizItem;
         private int _curQIndex;
@@ -47,8 +48,8 @@ namespace BarGame
         }
         private void StartQuizTimer()
         {
-            _quizTime = 10;
-            _txtTime.Text = "10 sec(s) left";
+            _quizTime = 60;
+            _txtTime.Text = "60 sec(s) left";
             _scale.ScaleX = 0;
             _sbCountdown.Begin();
             _sbTimer.Begin();
@@ -94,7 +95,9 @@ namespace BarGame
                 ((Rectangle)sender).Fill = new SolidColorBrush { Color = Colors.Green };
                 txtResult.Text = "  You scored : " + _currentPoints;
                 txtResult.Foreground = new SolidColorBrush() { Color = Colors.Green };
-
+                NavigationService.Navigate(new Uri(
+                   "/Congrats.xaml",
+                   UriKind.Relative));
             }
             else
             {
