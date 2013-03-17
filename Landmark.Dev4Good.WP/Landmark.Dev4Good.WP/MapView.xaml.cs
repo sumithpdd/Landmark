@@ -561,6 +561,7 @@ namespace Landmark.Dev4Good.WP
         /// </summary>
         private async void GetCurrentCoordinate()
         {
+            return;
             ShowProgressIndicator(AppResources.GettingLocationProgressText);
             Geolocator geolocator = new Geolocator();
             geolocator.DesiredAccuracy = PositionAccuracy.High;
@@ -589,20 +590,15 @@ namespace Landmark.Dev4Good.WP
 
         private async void GetLandmarksForLocation()
         {
-             MapLayer mapLayer = new MapLayer();
-             var MyCoordinate = new GeoCoordinate(51.498378, -0.175881);
-  // Draw marker for current position
-            if (MyCoordinate != null)
-            {
-                DrawAccuracyRadius(mapLayer);
-                DrawMapMarker(MyCoordinate, Colors.Red, mapLayer);
-            }
+            /* MapLayer mapLayer = new MapLayer();
+            var MyCoordinate = new GeoCoordinate(51.498378, -0.175881);
+            
             List<CustomerLandmarks> landmarks = App.ViewModel.LoadAvailableLandmarks();
          
             foreach (CustomerLandmarks landmark in landmarks)
             {
                 DrawMapMarker(new GeoCoordinate(landmark.Latitude, landmark.Longitude), Colors.Blue, mapLayer);
-            }
+            }*/
         }
 
         /// <summary>
@@ -613,6 +609,10 @@ namespace Landmark.Dev4Good.WP
             MyMap.Layers.Clear();
             MapLayer mapLayer = new MapLayer();
 
+            //initialise MyCoordinate
+            //MyCoordinate = App.ViewModel.LoadAvailableLandmarks();
+            MyCoordinate = new GeoCoordinate(51.498378, -0.175881);
+            
             // Draw marker for current position
             if (MyCoordinate != null)
             {
@@ -624,6 +624,12 @@ namespace Landmark.Dev4Good.WP
             for (int i = 0; i < MyCoordinates.Count; i++)
             {
                 DrawMapMarker(MyCoordinates[i], Colors.Blue, mapLayer);
+            }
+             List<CustomerLandmarks> landmarks = App.ViewModel.LoadAvailableLandmarks();
+         
+            foreach (CustomerLandmarks landmark in landmarks)
+            {
+                DrawMapMarker(new GeoCoordinate(landmark.Latitude, landmark.Longitude), Colors.Green, mapLayer);
             }
 
             // Draw markers for possible waypoints when directions are shown.
@@ -637,6 +643,8 @@ namespace Landmark.Dev4Good.WP
             }
 
             MyMap.Layers.Add(mapLayer);
+            MyMap.Center = new GeoCoordinate(51.498378, -0.175881);
+            MyMap.ZoomLevel = 14;
         }
 
         /// <summary>
