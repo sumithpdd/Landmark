@@ -100,6 +100,9 @@
     <Compile Include="Congrats.xaml.cs">
       <DependentUpon>Congrats.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SelectedLandmarksCreate.xaml.cs">
+      <DependentUpon>SelectedLandmarksCreate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateQuestion.xaml.cs">
       <DependentUpon>CreateQuestion.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
     <Page Include="Congrats.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectedLandmarksCreate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="CreateQuestion.xaml">
       <Generator>MSBuild:Compile</Generator>

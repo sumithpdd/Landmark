@@ -91,7 +91,7 @@ namespace Landmark.Dev4Good.WP
              
             _popup.Closed += (s1, e1) => NavigationService.Navigate(
                 new Uri(
-                    "/CreateQuestion.xaml",
+                    "/SelectedLandmarksCreate.xaml",
                     UriKind.Relative));
         }
 
