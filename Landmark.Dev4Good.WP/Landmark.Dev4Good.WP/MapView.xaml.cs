@@ -40,6 +40,7 @@ namespace Landmark.Dev4Good.WP
                     BuildApplicationBar();
                     GetCurrentCoordinate();
                     GetLandmarksForLocation();
+                    DrawMapMarkers();
 
             }
 
@@ -599,9 +600,10 @@ namespace Landmark.Dev4Good.WP
             HideProgressIndicator();
         }
 
-        private void GetLandmarksForLocation()
+        private async void GetLandmarksForLocation()
         {
-           
+
+            
         }
 
         /// <summary>
