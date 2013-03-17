@@ -11,7 +11,7 @@
     d:DesignHeight="480" d:DesignWidth="480">
     <Grid x:Name="LayoutRoot" Width="480" Height="800" Background="Black">
         <StackPanel>    
-            <TextBlock Text="Landmarks found" Margin="0, 100, 0, 0"  > </TextBlock>
+            <TextBlock Text="Landmarks found for South Kensington" Margin="0, 100, 0, 0"  > </TextBlock>
             <!--Single line list with text wrapping-->
             <phone:LongListSelector Name="FoundLandmarks" Margin="0,0,-22,0" ItemsSource="{Binding}"  >
                 <phone:LongListSelector.ItemTemplate>
