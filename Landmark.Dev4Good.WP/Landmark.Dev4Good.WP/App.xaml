@@ -57,7 +57,7 @@
             <Setter Property="Margin" Value="0"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
-        <Style BasedOn="{StaticResource PhoneTextLargeStyle}" x:Key="PhoneTextLargeStyle" TargetType="TextBlock">
+        <Style BasedOn="{StaticResource PhoneTextLargeStyle}" x:Key="PanoramaHeaderButtonsStyle" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#461B0D"/>
             <Setter Property="FontSize" Value="28"/>
         </Style>

@@ -35,6 +35,7 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="Margin" Value="0,24,0,0"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="30"/>
         </Style>
         <Style x:Key="TextBoxHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockHeaderStyle}">
             <Setter Property="Margin" Value="12,24,0,-10"/>
@@ -71,7 +72,16 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Landmank" Style="{StaticResource TextBlockHeaderStyle}"  />
-            <TextBlock Text="{Binding CustomerName, StringFormat='Welcome {0}'}"  Style="{StaticResource PageTitleStyle}"/>
+            <Grid Margin="0,30,0,20"   >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="45" /> 
+                </Grid.ColumnDefinitions>
+                <TextBlock  Grid.Column="0" Text="{Binding CustomerName, StringFormat='Welcome {0}'}"  Style="{StaticResource PageTitleStyle}"/>
+                <TextBlock  Grid.Column="1" Text="{Binding PointsAchieved}"  Style="{StaticResource PageTitleStyle}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Image  Grid.Column="2" Source="Assets/trophy.gif" Width="40" Height="40"/>
+            </Grid>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->

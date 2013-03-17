@@ -184,6 +184,7 @@
   <ItemGroup>
     <Content Include="Assets\innerPagesBackground.jpg" />
     <Content Include="Assets\place.png" />
+    <Resource Include="Assets\trophy.gif" />
     <Resource Include="Assets\Congrats.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
