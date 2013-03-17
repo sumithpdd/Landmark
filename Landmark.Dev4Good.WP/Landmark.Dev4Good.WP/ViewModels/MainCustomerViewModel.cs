@@ -142,7 +142,7 @@ namespace Landmark.Dev4Good.WP.ViewModels
             this.CustomerName = "Sumith";
             this.PointsAchieved = 30;
              this.Games.Clear();
-            this.Games.Add(new Game(){ GameId = 1,GameName = "Kensington Park", CompletedPercent = 20});
+            this.Games.Add(new Game(){ GameId = 1,GameName = "South Kensington", CompletedPercent = 20});
             this.Games.Add(new Game() { GameId = 2, GameName = "London Walking Trail", CompletedPercent = 75 });
             this.Games.Add(new Game() { GameId = 3, GameName = "Trip to Lake district", CompletedPercent = 40 });
             this.Games.Add(new Game() { GameId = 4, GameName = "A Great Day at dev4good", CompletedPercent = 95 });
@@ -163,10 +163,11 @@ namespace Landmark.Dev4Good.WP.ViewModels
         public ObservableCollection<CustomerLandmarks> LoadAvailableLandmarks()
         {
             ObservableCollection<CustomerLandmarks> availalelandmarks = new ObservableCollection<CustomerLandmarks>();
-            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 1, LandmarkName = "kensington palace", IsSelected = false });
-            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, LandmarkName = "kensington palace 2", IsSelected = false });
-            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, LandmarkName = "kensington palace 3", IsSelected = false });
-            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, LandmarkName = "kensington palace 4", IsSelected = false });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 1, LandmarkName = "Natural History Museum", IsSelected = false });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, LandmarkName = "Science Museum", IsSelected = false });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, LandmarkName = "The Royal Marsden", IsSelected = false });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, LandmarkName = "Victoria and Albert Museum", IsSelected = false });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 5, LandmarkName = "The National Army Museum", IsSelected = false });
             return availalelandmarks;
 
         }
