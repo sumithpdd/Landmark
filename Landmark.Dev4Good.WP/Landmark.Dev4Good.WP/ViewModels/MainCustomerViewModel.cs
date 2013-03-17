@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -160,14 +161,14 @@ namespace Landmark.Dev4Good.WP.ViewModels
             this.IsDataLoaded = true;
         }
 
-        public ObservableCollection<CustomerLandmarks> LoadAvailableLandmarks()
+        public List<CustomerLandmarks> LoadAvailableLandmarks()
         {
-            ObservableCollection<CustomerLandmarks> availalelandmarks = new ObservableCollection<CustomerLandmarks>();
-            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 1, LandmarkName = "Natural History Museum", IsSelected = false });
-            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, LandmarkName = "Science Museum", IsSelected = false });
-            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, LandmarkName = "The Royal Marsden", IsSelected = false });
-            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, LandmarkName = "Victoria and Albert Museum", IsSelected = false });
-            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 5, LandmarkName = "The National Army Museum", IsSelected = false });
+            List<CustomerLandmarks> availalelandmarks = new List<CustomerLandmarks>();
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 1, LandmarkName = "Natural History Museum", IsSelected = false, Latitude = 51.498378, Longitude = -0.175881 });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, LandmarkName = "Science Museum", IsSelected = false, Latitude = 51.499446, Longitude = -0.174508 });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, LandmarkName = "The Royal Marsden", IsSelected = false, Latitude = 51.491484, Longitude = -0.172448 });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, LandmarkName = "Victoria and Albert Museum", IsSelected = false, Latitude = 51.497683, Longitude = -0.171847 });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 5, LandmarkName = "The National Army Museum", IsSelected = false, Latitude = 51.487636, Longitude = -0.160174 });
             return availalelandmarks;
 
         }
