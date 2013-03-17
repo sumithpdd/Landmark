@@ -15,9 +15,6 @@ namespace Landmark.Dev4Good.WP.Models
                        {
                            Id = (string)query.Element("id"),
                            Question = (string)query.Element("question"),
-                           Qtype = (string)query.Element("qtype"),
-                           Category = (string)query.Element("category"),
-                           MediaUrl = (string)query.Element("mediaurl"),
                            A = (string)query.Element("a"),
                            B = (string)query.Element("b"),
                            C = (string)query.Element("c"),

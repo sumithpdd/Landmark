@@ -159,6 +159,17 @@ namespace Landmark.Dev4Good.WP.ViewModels
             LoadDataBaseFromWeb();
             this.IsDataLoaded = true;
         }
+
+        public ObservableCollection<CustomerLandmarks> LoadAvailableLandmarks()
+        {
+            ObservableCollection<CustomerLandmarks> availalelandmarks = new ObservableCollection<CustomerLandmarks>();
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 1, LandmarkName = "kensington palace", IsSelected = false });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, LandmarkName = "kensington palace 2", IsSelected = false });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, LandmarkName = "kensington palace 3", IsSelected = false });
+            availalelandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, LandmarkName = "kensington palace 4", IsSelected = false });
+            return availalelandmarks;
+
+        }
     }
 
 }

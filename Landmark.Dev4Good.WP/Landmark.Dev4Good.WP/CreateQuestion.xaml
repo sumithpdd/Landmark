@@ -60,27 +60,50 @@
             <Setter Property="Foreground" Value="#E0440D"/>
             <Setter Property="Margin" Value="0"/>
         </Style>
-      
+
     </phone:PhoneApplicationPage.Resources>
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" IsEnabled="True" Text="Save"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" IsEnabled="True" Text="Cancel"/>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
     <Grid x:Name="LayoutRoot" Background="{StaticResource InnerPageBackground}">
         <Image Style="{StaticResource InnerPageLogoStyle}"/>
-        <TextBlock Style="{StaticResource PageTitleStyle}" Margin="24,82,0,0" Text="TASK DETAILS" />
+        <TextBlock Style="{StaticResource PageTitleStyle}" Margin="24,82,0,0" Text="Landmark Name" />
 
-        <ScrollViewer Margin="12,142,12,0">
+        <ScrollViewer Margin="12,100,12,0">
             <StackPanel>
-                <TextBlock Text="Name" Style="{StaticResource TextBoxHeaderStyle}"/>
-                <TextBox x:Name="TaskName" MaxLength="50" Text="{Binding Name, Mode=TwoWay}"/>
-               
-        <StackPanel x:Name="UrlContainer">
-            <TextBlock Text="Url" Style="{StaticResource TextBoxHeaderStyle}"/>
-            <TextBox Text="{Binding Url, Mode=TwoWay}" InputScope="Url"/>
-        </StackPanel>
-        <StackPanel x:Name="NotesContainer">
-            <TextBlock Text="Notes" Style="{StaticResource TextBoxHeaderStyle}"/>
-            <TextBox AcceptsReturn="True" Height="160" TextWrapping="Wrap" Text="{Binding Notes, Mode=TwoWay}"/>
-        </StackPanel>
+                <TextBlock Text="Question" Style="{StaticResource TextBoxHeaderStyle}"/>
+                <TextBox x:Name="Question" MaxLength="50" Text="{Binding Name, Mode=TwoWay}"/>
+
+                <StackPanel x:Name="UrlContainer">
+                    <TextBlock Text="Multiple choice Answers" Style="{StaticResource TextBoxHeaderStyle}"/>
                 </StackPanel>
-            </ScrollViewer>
+                <StackPanel x:Name="AnswerAContainer">
+                    <TextBlock Text="A" Style="{StaticResource TextBoxHeaderStyle}"/>
+                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerA, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel x:Name="AnswerBContainer">
+                    <TextBlock Text="B" Style="{StaticResource TextBoxHeaderStyle}"/>
+                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerB, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel x:Name="AnswerCContainer">
+                    <TextBlock Text="C" Style="{StaticResource TextBoxHeaderStyle}"/>
+                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerC, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel x:Name="AnswerDContainer">
+                    <TextBlock Text="D" Style="{StaticResource TextBoxHeaderStyle}"/>
+                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerD, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel x:Name="CorrectAnswer" HorizontalAlignment="Left">
+                    <Button Content="A"   Margin="10,10,10,10"/>
+                    <Button Content="B"  Margin="10,10,10,10"/>
+                    <Button Content="C"   Margin="10,10,10,10"/>
+                    <Button Content="D"   Margin="10,10,10,10"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 
 </phone:PhoneApplicationPage>

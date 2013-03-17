@@ -27,21 +27,56 @@ namespace Landmark.Dev4Good.WP.Models
             }
         }
 
-        private string _title;
+        private string _landmarkName;
 
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
         /// <returns></returns>
-        public string Title
+        public string LandmarkName
         {
-            get { return _title; }
+            get { return _landmarkName; }
             set
             {
-                if (value != _title)
+                if (value != _landmarkName)
                 {
-                    _title = value;
-                    NotifyPropertyChanged("Title");
+                    _landmarkName = value;
+                    NotifyPropertyChanged("LandmarkName");
+                }
+            }
+        }
+
+        private decimal _latitude;
+        /// <summary>
+        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
+        /// </summary>
+        /// <returns></returns>
+        public decimal Latitude
+        {
+            get { return _latitude; }
+            set
+            {
+                if (value != _latitude)
+                {
+                    _latitude = value;
+                    NotifyPropertyChanged("Latitude");
+                }
+            }
+        }
+        private decimal _longitude;
+        /// <summary>
+        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
+        /// </summary>
+        /// <returns></returns>
+        public decimal Longitude
+        {
+            get { return _longitude; }
+            set
+            {
+                if (value != _longitude)
+                {
+                    _longitude = value;
+                    NotifyPropertyChanged("Longitude");
                 }
             }
         }
@@ -65,6 +100,7 @@ namespace Landmark.Dev4Good.WP.Models
             }
         }
         private bool _hasQuestion;
+
         public bool HasQuestion
         {
             get { return _hasQuestion; }

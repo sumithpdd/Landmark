@@ -16,6 +16,7 @@ namespace Landmark.Dev4Good.WP
         public PopUpLandmarks()
         {
             InitializeComponent();
+         this.DataContext =   App.ViewModel.LoadAvailableLandmarks();
         }
         private void BtnDone_Click(object sender, RoutedEventArgs e)
         {
