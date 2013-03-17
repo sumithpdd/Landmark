@@ -643,7 +643,7 @@ namespace Landmark.Dev4Good.WP
             }
 
             MyMap.Layers.Add(mapLayer);
-            MyMap.Center = new GeoCoordinate(51.498378, -0.175881);
+            MyMap.Center = new GeoCoordinate(51.524299, -0.098322);
             MyMap.ZoomLevel = 14;
         }
 
