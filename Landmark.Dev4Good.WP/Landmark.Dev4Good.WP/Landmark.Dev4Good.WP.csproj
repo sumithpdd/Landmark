@@ -161,6 +161,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\place.png" />
     <Content Include="Assets\Tiles\Tile_map_explorer_159x159.png" />
     <Content Include="Assets\Tiles\Tile_map_explorer_336x336.png" />
     <Content Include="Assets\Tiles\Tile_map_explorer_691x336.png" />

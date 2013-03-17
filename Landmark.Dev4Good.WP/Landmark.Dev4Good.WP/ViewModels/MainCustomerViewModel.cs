@@ -143,8 +143,9 @@ namespace Landmark.Dev4Good.WP.ViewModels
             this.PointsAchieved = 30;
              this.Games.Clear();
             this.Games.Add(new Game(){ GameId = 1,GameName = "Kensington Park", CompletedPercent = 20});
-            this.Games.Add(new Game() { GameId = 2, GameName = "Trip to Lake district", CompletedPercent = 20 });
-            this.Games.Add(new Game() { GameId = 3, GameName = "A Great Day at dev4good", CompletedPercent = 20 });
+            this.Games.Add(new Game() { GameId = 2, GameName = "London Walking Trail", CompletedPercent = 75 });
+            this.Games.Add(new Game() { GameId = 3, GameName = "Trip to Lake district", CompletedPercent = 40 });
+            this.Games.Add(new Game() { GameId = 4, GameName = "A Great Day at dev4good", CompletedPercent = 95 });
         }
 
      
