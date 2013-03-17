@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
@@ -21,6 +22,8 @@ namespace Landmark.Dev4Good.WP
 {
     public partial class MapView : PhoneApplicationPage
     {
+        private Popup _popup;
+
         public MapView()
         {
             InitializeComponent();
@@ -80,32 +83,15 @@ namespace Landmark.Dev4Good.WP
         /// </summary>
         private void Route_Click(object sender, EventArgs e)
         {
-            HideDirections();
-
-            if (!_isLocationAllowed)
-            {
-                MessageBoxResult result = MessageBox.Show(AppResources.NoCurrentLocationMessageBoxText + " " + AppResources.LocationUsageQueryText,
-                                                          AppResources.ApplicationTitle,
-                                                          MessageBoxButton.OKCancel);
-
-                if (result == MessageBoxResult.OK)
-                {
-                    _isLocationAllowed = true;
-                     
-                    GetCurrentCoordinate();
-                }
-            }
-            else if (MyCoordinate == null)
-            {
-                MessageBox.Show(AppResources.NoCurrentLocationMessageBoxText, AppResources.ApplicationTitle, MessageBoxButton.OK);
-            }
-            else
-            {
-                _isRouteSearch = true;
-                SearchTextBox.SelectAll();
-                SearchTextBox.Visibility = Visibility.Visible;
-                SearchTextBox.Focus();
-            }
+            _popup = new Popup { Child = new PopUpLandmarks() };
+          
+                _popup.Visibility = Visibility.Visible;
+                _popup.IsOpen = true;
+             
+            _popup.Closed += (s1, e1) => NavigationService.Navigate(
+                new Uri(
+                    "/CreateQuestion.xaml",
+                    UriKind.Relative));
         }
 
         /// <summary>
@@ -150,7 +136,7 @@ namespace Landmark.Dev4Good.WP
                     DrawMapMarkers();
 
                     HideDirections();
-                    AppBarDirectionsMenuItem.IsEnabled = false;
+                  //  AppBarDirectionsMenuItem.IsEnabled = false;
 
                     SearchForTerm(SearchTextBox.Text);
                     this.Focus();
@@ -370,9 +356,9 @@ namespace Landmark.Dev4Good.WP
         private void ShowDirections()
         {
             _isDirectionsShown = true;
-            AppBarDirectionsMenuItem.Text = AppResources.DirectionsOffMenuItemText;
-            DirectionsTitleRowDefinition.Height = GridLength.Auto;
-            DirectionsRowDefinition.Height = new GridLength(2, GridUnitType.Star);
+            //AppBarDirectionsMenuItem.Text = AppResources.DirectionsOffMenuItemText;
+            //DirectionsTitleRowDefinition.Height = GridLength.Auto;
+            //DirectionsRowDefinition.Height = new GridLength(2, GridUnitType.Star);
             ModePanel.Visibility = Visibility.Collapsed;
             HeadingSlider.Visibility = Visibility.Collapsed;
             PitchSlider.Visibility = Visibility.Collapsed;
@@ -384,9 +370,9 @@ namespace Landmark.Dev4Good.WP
         private void HideDirections()
         {
             _isDirectionsShown = false;
-            AppBarDirectionsMenuItem.Text = AppResources.DirectionsOnMenuItemText;
-            DirectionsTitleRowDefinition.Height = new GridLength(0);
-            DirectionsRowDefinition.Height = new GridLength(0);
+            //AppBarDirectionsMenuItem.Text = AppResources.DirectionsOnMenuItemText;
+            //DirectionsTitleRowDefinition.Height = new GridLength(0);
+            //DirectionsRowDefinition.Height = new GridLength(0);
             ModePanel.Visibility = Visibility.Visible;
             HeadingSlider.Visibility = Visibility.Visible;
             PitchSlider.Visibility = Visibility.Visible;
@@ -438,6 +424,7 @@ namespace Landmark.Dev4Good.WP
 
                         // Center on the first result.
                         MyMap.SetView(e.Result[0].GeoCoordinate, 10, MapAnimationKind.Parabolic);
+                         
                     }
                 }
                 else
@@ -712,32 +699,7 @@ namespace Landmark.Dev4Good.WP
             appBarRouteButton.Click += new EventHandler(Route_Click);
             ApplicationBar.Buttons.Add(appBarRouteButton);
 
-            ApplicationBarIconButton appBarLocateMeButton = new ApplicationBarIconButton(new Uri("/Assets/appbar.locate.me.png", UriKind.Relative));
-            appBarLocateMeButton.Text = AppResources.LocateMeMenuButtonText;
-            appBarLocateMeButton.Click += new EventHandler(LocateMe_Click);
-            ApplicationBar.Buttons.Add(appBarLocateMeButton);
-
-            // Create new menu items with the localized strings from AppResources.
-            AppBarColorModeMenuItem = new ApplicationBarMenuItem(AppResources.ColorModeDarkMenuItemText);
-            AppBarColorModeMenuItem.Click += new EventHandler(ColorMode_Click);
-            ApplicationBar.MenuItems.Add(AppBarColorModeMenuItem);
-
-            AppBarLandmarksMenuItem = new ApplicationBarMenuItem(AppResources.LandmarksOnMenuItemText);
-            AppBarLandmarksMenuItem.Click += new EventHandler(Landmarks_Click);
-            ApplicationBar.MenuItems.Add(AppBarLandmarksMenuItem);
-
-            AppBarPedestrianFeaturesMenuItem = new ApplicationBarMenuItem(AppResources.PedestrianFeaturesOnMenuItemText);
-            AppBarPedestrianFeaturesMenuItem.Click += new EventHandler(PedestrianFeatures_Click);
-            ApplicationBar.MenuItems.Add(AppBarPedestrianFeaturesMenuItem);
-
-            AppBarDirectionsMenuItem = new ApplicationBarMenuItem(AppResources.DirectionsOnMenuItemText);
-            AppBarDirectionsMenuItem.Click += new EventHandler(Directions_Click);
-            AppBarDirectionsMenuItem.IsEnabled = false;
-            ApplicationBar.MenuItems.Add(AppBarDirectionsMenuItem);
-
-            AppBarAboutMenuItem = new ApplicationBarMenuItem(AppResources.AboutMenuItemText);
-            AppBarAboutMenuItem.Click += new EventHandler(About_Click);
-            ApplicationBar.MenuItems.Add(AppBarAboutMenuItem);
+              
         }
 
         /// <summary>

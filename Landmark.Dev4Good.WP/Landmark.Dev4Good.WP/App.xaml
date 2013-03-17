@@ -17,6 +17,7 @@
         </Style>
         
         <local:LocalizedStrings xmlns:local="clr-namespace:Landmark.Dev4Good.WP" x:Key="LocalizedStrings"/>
+        <SolidColorBrush x:Key="ButtonBrush" Color="#4E9FC8"/>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
