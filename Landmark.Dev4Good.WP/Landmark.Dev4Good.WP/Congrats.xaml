@@ -22,13 +22,13 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Landmank" Style="{StaticResource TextBlockHeaderStyle}"  />
+            <TextBlock Text="Landmark" Style="{StaticResource TextBlockHeaderStyle}"  />
             <TextBlock Text="{Binding CustomerName, StringFormat='Congrats {0}'}"  Style="{StaticResource PageTitleStyle}"/>
         </StackPanel>
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Image Source="Assets/Congrats.gif" Stretch="Fill"  ></Image>
-            <TextBlock x:Name="tbCongrats" HorizontalAlignment="Left" Margin="65,19,0,0" TextWrapping="Wrap" Text="You have won 50 points" VerticalAlignment="Top" RenderTransformOrigin="-0.269,0.058" Width="341"  />
+            <TextBlock x:Name="tbCongrats" HorizontalAlignment="Left" Margin="129,25,0,0" TextWrapping="Wrap" Text="You have won 50 points" VerticalAlignment="Top" RenderTransformOrigin="-0.269,0.058" Width="216" Foreground="Black"  />
         </Grid>
     </Grid>
 
