@@ -46,12 +46,12 @@ namespace Landmark.Dev4Good.WP.Models
             }
         }
 
-        private decimal _latitude;
+        private double _latitude;
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
         /// <returns></returns>
-        public decimal Latitude
+        public double Latitude
         {
             get { return _latitude; }
             set
@@ -63,12 +63,12 @@ namespace Landmark.Dev4Good.WP.Models
                 }
             }
         }
-        private decimal _longitude;
+        private double _longitude;
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
         /// <returns></returns>
-        public decimal Longitude
+        public double Longitude
         {
             get { return _longitude; }
             set
