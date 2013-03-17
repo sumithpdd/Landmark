@@ -39,10 +39,10 @@ namespace Landmark.Dev4Good.WP.ViewModels
          public void LoadData()
 
         {
-             SelectedCustomerLandmarks.Add(new CustomerLandmarks(){LandmarkId=1, Title="kensington palace", IsSelected = false});
-             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, Title = "kensington palace 2", IsSelected = false });
-             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, Title = "kensington palace 3", IsSelected = false });
-             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, Title = "kensington palace 4", IsSelected = false });
+             SelectedCustomerLandmarks.Add(new CustomerLandmarks(){LandmarkId=1, LandmarkName="kensington palace", IsSelected = false});
+             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, LandmarkName = "kensington palace 2", IsSelected = false });
+             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, LandmarkName = "kensington palace 3", IsSelected = false });
+             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, LandmarkName = "kensington palace 4", IsSelected = false });
             
         }
          public event PropertyChangedEventHandler PropertyChanged;

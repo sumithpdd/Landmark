@@ -28,9 +28,9 @@ namespace Landmark.Dev4Good.WP.Classes
             get { return _title; }
             set
             {
-                NotifyPropertyChanging("Title");
+                NotifyPropertyChanging("LandmarkName");
                 _title = value;
-                NotifyPropertyChanged("Title");
+                NotifyPropertyChanged("LandmarkName");
             }
         }
 

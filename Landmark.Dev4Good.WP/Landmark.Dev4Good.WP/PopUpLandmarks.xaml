@@ -9,23 +9,29 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480">
-
-    <Grid x:Name="LayoutRoot" Width="480" Height="500">
-        <TextBlock Text="Landmarks found" Margin="0, 100, 0, 0"  > </TextBlock>
+    <Grid x:Name="LayoutRoot" Width="480" Height="800" Background="Black">
+        <StackPanel>    
+            <TextBlock Text="Landmarks found" Margin="0, 100, 0, 0"  > </TextBlock>
             <!--Single line list with text wrapping-->
-            <phone:LongListSelector Name="FoundLandmarks" Margin="0,0,-22,0" ItemsSource="{Binding FoundLandMarks}"  >
+            <phone:LongListSelector Name="FoundLandmarks" Margin="0,0,-22,0" ItemsSource="{Binding}"  >
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Margin="0,-6,0,12">
-                            <TextBlock Text="{Binding Title}"
-											Foreground="{StaticResource PhoneBackgroundBrush}"
-										   TextWrapping="Wrap" 
-										   Style="{StaticResource PhoneTextExtraLargeStyle}" 
-										   FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
-                        </StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                             <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding LandmarkName}"
+											VerticalAlignment="Center"  
+										   TextWrapping="Wrap" Style="{StaticResource PhoneTextTitle3Style}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontWeight="SemiBold"/>
+                            <CheckBox Grid.Column ="1" Name="checkLandmark" ></CheckBox>
+                        </Grid>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
-        <Button Name="btnSave" Content="Save" Click="BtnDone_Click"></Button>
+            <Button Name="btnSave" Content="Save" Click="BtnDone_Click"></Button>
+        </StackPanel>
     </Grid>
+  
+
 </UserControl>

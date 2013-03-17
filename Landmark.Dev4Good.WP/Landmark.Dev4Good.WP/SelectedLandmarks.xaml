@@ -67,7 +67,7 @@
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                     <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="Bold" Grid.Row="0" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding LandmarkName}" FontSize="16" FontWeight="Bold" Grid.Row="0" TextWrapping="Wrap"/>
                                      
                                 </Grid>
                             </Grid>
