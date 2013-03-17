@@ -119,6 +119,9 @@
       <DependentUpon>PopUpLandmarks.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="SplashScreenControl.xaml.cs">
+      <DependentUpon>SplashScreenControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewLocations.xaml.cs">
       <DependentUpon>ViewLocations.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SplashScreenControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewLocations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +202,7 @@
     <Resource Include="Assets\Congrats.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Assets\SplashScreenImage.jpg" />
     <Content Include="Assets\Tiles\Tile_map_explorer_159x159.png" />
     <Content Include="Assets\Tiles\Tile_map_explorer_336x336.png" />
     <Content Include="Assets\Tiles\Tile_map_explorer_691x336.png" />
