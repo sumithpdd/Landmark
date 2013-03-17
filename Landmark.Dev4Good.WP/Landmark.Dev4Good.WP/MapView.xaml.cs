@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Landmark.Dev4Good.WP.Models;
 using Landmark.Dev4Good.WP.Resources;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Maps.Controls;
@@ -43,7 +44,6 @@ namespace Landmark.Dev4Good.WP
                     BuildApplicationBar();
                     GetCurrentCoordinate();
                     GetLandmarksForLocation();
-                    DrawMapMarkers();
 
             }
 
@@ -589,8 +589,20 @@ namespace Landmark.Dev4Good.WP
 
         private async void GetLandmarksForLocation()
         {
-
-            
+             MapLayer mapLayer = new MapLayer();
+             var MyCoordinate = new GeoCoordinate(51.498378, -0.175881);
+  // Draw marker for current position
+            if (MyCoordinate != null)
+            {
+                DrawAccuracyRadius(mapLayer);
+                DrawMapMarker(MyCoordinate, Colors.Red, mapLayer);
+            }
+            List<CustomerLandmarks> landmarks = App.ViewModel.LoadAvailableLandmarks();
+         
+            foreach (CustomerLandmarks landmark in landmarks)
+            {
+                DrawMapMarker(new GeoCoordinate(landmark.Latitude, landmark.Longitude), Colors.Blue, mapLayer);
+            }
         }
 
         /// <summary>
