@@ -80,27 +80,29 @@
                 <StackPanel x:Name="UrlContainer">
                     <TextBlock Text="Multiple choice Answers" Style="{StaticResource TextBoxHeaderStyle}"/>
                 </StackPanel>
-                <StackPanel x:Name="AnswerAContainer">
+                <StackPanel x:Name="AnswerAContainer" Orientation="Horizontal">
                     <TextBlock Text="A" Style="{StaticResource TextBoxHeaderStyle}"/>
-                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerA, Mode=TwoWay}"/>
+                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerA, Mode=TwoWay}" Width="300"/>
                 </StackPanel>
-                <StackPanel x:Name="AnswerBContainer">
+                <StackPanel x:Name="AnswerBContainer" Orientation="Horizontal">
                     <TextBlock Text="B" Style="{StaticResource TextBoxHeaderStyle}"/>
-                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerB, Mode=TwoWay}"/>
+                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerB, Mode=TwoWay}" Width="300"/>
                 </StackPanel>
-                <StackPanel x:Name="AnswerCContainer">
+                <StackPanel x:Name="AnswerCContainer" Orientation="Horizontal">
                     <TextBlock Text="C" Style="{StaticResource TextBoxHeaderStyle}"/>
-                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerC, Mode=TwoWay}"/>
+                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerC, Mode=TwoWay}" Width="300"/>
                 </StackPanel>
-                <StackPanel x:Name="AnswerDContainer">
+                <StackPanel x:Name="AnswerDContainer" Orientation="Horizontal">
                     <TextBlock Text="D" Style="{StaticResource TextBoxHeaderStyle}"/>
-                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerD, Mode=TwoWay}"/>
+                    <TextBox AcceptsReturn="True"  TextWrapping="Wrap" Text="{Binding AnswerD, Mode=TwoWay}" Width="300"/>
                 </StackPanel>
-                <StackPanel x:Name="CorrectAnswer" HorizontalAlignment="Left">
-                    <Button Content="A"   Margin="10,10,10,10"/>
-                    <Button Content="B"  Margin="10,10,10,10"/>
-                    <Button Content="C"   Margin="10,10,10,10"/>
-                    <Button Content="D"   Margin="10,10,10,10"/>
+                <TextBlock Text="Correct Answer" Style="{StaticResource TextBoxHeaderStyle}"/>
+                <StackPanel x:Name="CorrectAnswer" HorizontalAlignment="Left" Orientation="Horizontal">
+
+                    <Button Content="A"   Margin="10,10,10,10" Foreground="{StaticResource ButtonBrush}" />
+                    <Button Content="B"  Margin="10,10,10,10" Foreground="{StaticResource ButtonBrush}" />
+                    <Button Content="C"   Margin="10,10,10,10" Foreground="{StaticResource ButtonBrush}" />
+                    <Button Content="D"   Margin="10,10,10,10" Foreground="{StaticResource ButtonBrush}" />
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
