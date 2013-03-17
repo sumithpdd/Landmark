@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using System.Resources;
+using System.Threading;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
@@ -47,6 +48,13 @@ namespace Landmark.Dev4Good.WP
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
+
+        public static bool IsDatabaseLoaded
+        {
+            get { Thread.Sleep(1000);
+                return true;
+            } 
+        }
 
         /// <summary>
         /// Constructor for the Application object.
