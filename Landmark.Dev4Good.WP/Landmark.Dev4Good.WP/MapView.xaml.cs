@@ -561,7 +561,7 @@ namespace Landmark.Dev4Good.WP
         /// </summary>
         private async void GetCurrentCoordinate()
         {
-            return;
+            //return;
             ShowProgressIndicator(AppResources.GettingLocationProgressText);
             Geolocator geolocator = new Geolocator();
             geolocator.DesiredAccuracy = PositionAccuracy.High;
