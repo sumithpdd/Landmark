@@ -39,12 +39,10 @@ namespace Landmark.Dev4Good.WP.ViewModels
          public void LoadData()
 
         {
-            SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 1, LandmarkName = "The Slaughtered Lamb", IsSelected = true, Latitude = 51.523724, Longitude = (-0.101066) });
+            SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 1, LandmarkName = "The Slaughtered Lamb pub", IsSelected = true, Latitude = 51.523724, Longitude = (-0.101066) });
             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 2, LandmarkName = "Darbucka", IsSelected = true, Latitude = 51.524873, Longitude = -0.103061 });
-
             SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 3, LandmarkName = "The Dove Tail", IsSelected = true, Latitude = 51.523498, Longitude = -0.103855 });
-
-            SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, LandmarkName = "The White Bear", IsSelected = false, Latitude = 51.521535, Longitude = -0.101817 });
+            SelectedCustomerLandmarks.Add(new CustomerLandmarks() { LandmarkId = 4, LandmarkName = "Foolproof - Demo time", IsSelected = false, Latitude = 51.521535, Longitude = -0.101817 });
         }
          public event PropertyChangedEventHandler PropertyChanged;
          public void NotifyPropertyChanged(String propertyName)

@@ -46,7 +46,7 @@ namespace Landmark.Dev4Good.WP
                     GetLandmarksForLocation();
             }
 
-            DrawMapMarkers();
+            DrawMapMarkers(false);
         }
 
       
@@ -133,7 +133,7 @@ namespace Landmark.Dev4Good.WP
                         MyMap.RemoveRoute(MyMapRoute);
                     }
                     MyCoordinates.Clear();
-                    DrawMapMarkers();
+                    DrawMapMarkers(true);
 
                     HideDirections();
                   //  AppBarDirectionsMenuItem.IsEnabled = false;
@@ -217,7 +217,7 @@ namespace Landmark.Dev4Good.WP
             {
                 HideDirections();
             }
-            DrawMapMarkers();
+            DrawMapMarkers(false);
         }
 
         /// <summary>
@@ -347,7 +347,7 @@ namespace Landmark.Dev4Good.WP
         /// </summary>
         private void ZoomLevelChanged(object sender, EventArgs e)
         {
-            DrawMapMarkers();
+            DrawMapMarkers(true);
         }
 
         /// <summary>
@@ -434,7 +434,7 @@ namespace Landmark.Dev4Good.WP
 
                 MyGeocodeQuery.Dispose();
             }
-            DrawMapMarkers();
+            DrawMapMarkers(false);
         }
 
         /// <summary>
@@ -504,7 +504,7 @@ namespace Landmark.Dev4Good.WP
                 }
                 MyRouteQuery.Dispose();
             }
-            DrawMapMarkers();
+            DrawMapMarkers(false);
         }
 
         /// <summary>
@@ -573,7 +573,7 @@ namespace Landmark.Dev4Good.WP
                 Dispatcher.BeginInvoke(() =>
                 {
                     MyCoordinate = new GeoCoordinate(currentPosition.Coordinate.Latitude, currentPosition.Coordinate.Longitude);
-                    DrawMapMarkers();
+                    DrawMapMarkers(false);
                     MyMap.SetView(MyCoordinate, 15, MapAnimationKind.Parabolic);
                     MyMap.LandmarksEnabled = true;
                     MyMap.PedestrianFeaturesEnabled = true;
@@ -603,7 +603,7 @@ namespace Landmark.Dev4Good.WP
         /// <summary>
         /// Method to draw markers on top of the map. Old markers are removed.
         /// </summary>
-        private void DrawMapMarkers()
+        private void DrawMapMarkers(bool showlandmarks)
         {
             MyMap.Layers.Clear();
             MapLayer mapLayer = new MapLayer();
@@ -624,12 +624,13 @@ namespace Landmark.Dev4Good.WP
             {
                 DrawMapMarker(MyCoordinates[i], Colors.Blue, mapLayer);
             }
+            if(showlandmarks){
              List<CustomerLandmarks> landmarks = App.ViewModel.LoadAvailableLandmarks();
          
             foreach (CustomerLandmarks landmark in landmarks)
             {
                 DrawMapMarker(new GeoCoordinate(landmark.Latitude, landmark.Longitude), Colors.Green, mapLayer);
-            }
+            }}
 
             // Draw markers for possible waypoints when directions are shown.
             // Start and end points are already drawn with different colors.
