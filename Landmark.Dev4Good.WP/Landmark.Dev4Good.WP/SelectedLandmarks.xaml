@@ -65,7 +65,7 @@
                                         </Grid>
                                     </Border>
                                 </Grid>
-                                <Grid Grid.Column="1">
+                                <Grid Grid.Column="1" Margin="20,0,0,0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="300"/>
                                          <ColumnDefinition Width="*"/>
@@ -76,7 +76,7 @@
                                     </Grid.RowDefinitions>
                                     <TextBlock Grid.Column ="0" Text="{Binding LandmarkName}" FontSize="16" FontWeight="Bold" Grid.Row="0" TextWrapping="Wrap"/>
                                     <CheckBox Grid.Column ="1" Name="checkLandmark" IsChecked="{Binding IsSelected}" ></CheckBox>
-                                        <Image Source="assets/"></Image>
+                                        
                                     </Grid>
                             </Grid>
                         </Border>

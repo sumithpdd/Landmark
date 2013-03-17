@@ -24,14 +24,15 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Landmank" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="selected landmarks" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="South Kensington" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
             <maps:Map x:Name="MyMap"   LandmarksEnabled="True" PedestrianFeaturesEnabled="True" Height="200"/>
-            <phone:LongListSelector Name="SelectedLandmarkList" Margin="0,0,-22,0" ItemsSource="{Binding SelectedCustomerLandmarks}" SelectionChanged="SelectedLandmarkList_OnSelectionChanged">
+                <ScrollViewer>
+            <phone:LongListSelector Name="SelectedLandmarkList" Margin="0,0,-22,0" ItemsSource="{Binding}" SelectionChanged="SelectedLandmarkList_OnSelectionChanged">
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
                         <Border Padding="0, 10, 0, 8" BorderThickness="0, 0, 0, 1" BorderBrush="#01636A">
@@ -61,7 +62,7 @@
                                                     <Point X="0" Y="11"/>
                                                 </Polygon.Points>
                                             </Polygon>
-                                            <TextBlock Text="{Binding LandmarkId}" Foreground="{StaticResource PhoneBackgroundBrush}" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding LandmarkId}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="10,0,0,0" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
                                         </Grid>
                                     </Border>
                                 </Grid>
@@ -69,20 +70,22 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="300"/>
                                          <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50"/>
+                                            </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <TextBlock Grid.Column ="0" Text="{Binding LandmarkName}" FontSize="16" FontWeight="Bold" Grid.Row="0" TextWrapping="Wrap"/>
-                                    <CheckBox Grid.Column ="1" Name="checkLandmark" IsChecked="{Binding IsSelected}" ></CheckBox>
-                                        <Image Source="assets/"></Image>
+                                    <CheckBox Grid.Column ="1" Name="checkLandmark" IsChecked="True" ></CheckBox>
+                                            <Image Grid.Column ="2" Source="assets/edit.icon.png"  Width="40" Height="40"></Image>
                                     </Grid>
                             </Grid>
                         </Border>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
+                </ScrollViewer>
             </StackPanel>
         </Grid>
     </Grid>

@@ -11,6 +11,11 @@ namespace Landmark.Dev4Good.WP
 			InitializeComponent();
 	 	}
 
+        private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SelectedLandmarksCreate.xaml", UriKind.Relative));
+        }
+
 	 
 	}
 }

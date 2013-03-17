@@ -82,7 +82,14 @@
                 <TextBlock x:Name="_txtQtn" Canvas.Top="20" Width="456" Height="50"
                Foreground="Gray" FontSize="24" TextWrapping="Wrap" Opacity="0"
                Text="This is a question" />
-                
+                <Canvas x:Name="_quizContent" Canvas.Left="10" Canvas.Top="100" Width="400"  Height="240" 
+            Background="White" Opacity="1" IsHitTestVisible="False" >
+                    <Rectangle Canvas.Left="0" Canvas.Top="1"  Width="400"  Height="240" Fill="White" Stroke="Black" />
+                    <Image x:Name="_imgMedia" Canvas.Left="10" Canvas.Top="10"  Height="220"  Width="380" 
+        Stretch="Uniform" />
+                    <MediaElement x:Name="_meVideo" Canvas.Left="10" Canvas.Top="10" Width="220" Height="220"
+        AutoPlay="True" Stretch="Uniform" />
+                </Canvas>
                 <Canvas x:Name="_quizChoiceArea" Canvas.Left="29" Canvas.Top="344" Width="380" Height="300">
                     <Canvas x:Name="A" Canvas.Top="20" Width="400" Height="50" RenderTransformOrigin="0.5,0.5" >
                     	<Canvas.RenderTransform>

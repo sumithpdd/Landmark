@@ -4,6 +4,9 @@
     {
         public string Id { get; set; }
         public string LandmarkId { get; set; }
+        public string Qtype { get; set; }
+        public string Category { get; set; }
+        public string MediaUrl { get; set; }
         public string Question { get; set; }
         public string A { get; set; }
         public string B { get; set; }

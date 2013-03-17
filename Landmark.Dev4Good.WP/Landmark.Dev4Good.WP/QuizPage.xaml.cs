@@ -64,7 +64,22 @@ namespace BarGame
             _curQIndex = idx - 1;
 
             _txtQtn.Text = q.Question;
-          
+            _imgMedia.Source = null;
+            _imgMedia.Visibility = Visibility.Collapsed;
+            _meVideo.Visibility = Visibility.Collapsed;
+
+            if (q.Qtype == "PIC")
+            {
+                _imgMedia.Visibility = Visibility.Visible;
+
+
+                var bi = new BitmapImage
+                {
+                    UriSource = new Uri( q.MediaUrl, UriKind.Relative)
+                };
+                _imgMedia.Stretch = Stretch.Fill;
+                _imgMedia.Source = bi;
+            }
 
             _tA.Text = q.A;
             _tB.Text = q.B;

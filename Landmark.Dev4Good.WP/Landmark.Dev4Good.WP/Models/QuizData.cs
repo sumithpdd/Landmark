@@ -14,6 +14,9 @@ namespace Landmark.Dev4Good.WP.Models
                        select new QuizItem
                        {
                            Id = (string)query.Element("id"),
+                           Qtype = (string)query.Element("qtype"),
+                          
+                           MediaUrl = (string)query.Element("mediaurl"),
                            Question = (string)query.Element("question"),
                            A = (string)query.Element("a"),
                            B = (string)query.Element("b"),

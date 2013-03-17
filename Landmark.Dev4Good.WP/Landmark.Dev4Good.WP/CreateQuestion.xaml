@@ -64,8 +64,8 @@
     </phone:PhoneApplicationPage.Resources>
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" IsEnabled="True" Text="Save"/>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" IsEnabled="True" Text="Cancel"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" IsEnabled="True" Text="Save" Click="ApplicationBarIconButton_Click_1"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" IsEnabled="True" Text="Cancel" Click="ApplicationBarIconButton_Click_1"/>
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
     <Grid x:Name="LayoutRoot" Background="{StaticResource InnerPageBackground}">
