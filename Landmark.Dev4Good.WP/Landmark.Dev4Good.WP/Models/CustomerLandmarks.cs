@@ -1,81 +1,85 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Landmark.Dev4Good.WP.ViewModels
+namespace Landmark.Dev4Good.WP.Models
 {
-    public class ItemViewModel : INotifyPropertyChanged
+    public class CustomerLandmarks : INotifyPropertyChanged
     {
-        private string _lineOne;
+        private int _landmarkId;
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
         /// <returns></returns>
-        public string LineOne
+        public int LandmarkId
         {
-            get
-            {
-                return _lineOne;
-            }
+            get { return _landmarkId; }
             set
             {
-                if (value != _lineOne)
+                if (value != _landmarkId)
                 {
-                    _lineOne = value;
-                    NotifyPropertyChanged("LineOne");
+                    _landmarkId = value;
+                    NotifyPropertyChanged("LandmarkID");
                 }
             }
         }
 
-        private string _lineTwo;
+        private string _title;
+
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
         /// <returns></returns>
-        public string LineTwo
+        public string Title
         {
-            get
-            {
-                return _lineTwo;
-            }
+            get { return _title; }
             set
             {
-                if (value != _lineTwo)
+                if (value != _title)
                 {
-                    _lineTwo = value;
-                    NotifyPropertyChanged("LineTwo");
+                    _title = value;
+                    NotifyPropertyChanged("Title");
                 }
             }
         }
 
-        private string _lineThree;
+        private bool _isSelected;
+
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
         /// <returns></returns>
-        public string LineThree
+        public bool IsSelected
         {
-            get
-            {
-                return _lineThree;
-            }
+            get { return _isSelected; }
             set
             {
-                if (value != _lineThree)
+                if (value != _isSelected)
                 {
-                    _lineThree = value;
-                    NotifyPropertyChanged("LineThree");
+                    _isSelected = value;
+                    NotifyPropertyChanged("IsSelected");
+                }
+            }
+        }
+        private bool _hasQuestion;
+        public bool HasQuestion
+        {
+            get { return _hasQuestion; }
+            set
+            {
+                if (value != _hasQuestion)
+                {
+                    _hasQuestion = value;
+                    NotifyPropertyChanged("HasQuestion");
                 }
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         private void NotifyPropertyChanged(String propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;

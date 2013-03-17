@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Net;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -10,13 +10,11 @@ using Microsoft.Phone.Shell;
 
 namespace Landmark.Dev4Good.WP
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class Congrats : PhoneApplicationPage
     {
-        // Constructor
-        public MainPage()
+        public Congrats()
         {
             InitializeComponent();
-
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
         }
@@ -30,21 +28,5 @@ namespace Landmark.Dev4Good.WP
             }
         }
 
-        private void CreateGame_OnClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(
-                 new Uri(
-                     "/MapView.xaml",
-                     UriKind.Relative));
-           
-        }
-
-        private void CurrentGameList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            NavigationService.Navigate(
-               new Uri(
-                   "/SelectedLandmarks.xaml",
-                   UriKind.Relative));
-        }
     }
 }

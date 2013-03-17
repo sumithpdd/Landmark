@@ -17,19 +17,19 @@ namespace Landmark.Dev4Good.WP
     public partial class App : Application
     {
         private static DbContext _db = null;
-        private static MainViewModel _viewModel = null;
+        private static MainCustomerViewModel _viewModel = null;
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
         /// </summary>
-        /// <returns>The MainViewModel object.</returns>
-        public static MainViewModel ViewModel
+        /// <returns>The MainCustomerViewModel object.</returns>
+        public static MainCustomerViewModel ViewModel
         {
             get
             {
                 // Delay creation of the view model until necessary
                 if (_viewModel == null)
-                    _viewModel = new MainViewModel();
+                    _viewModel = new MainCustomerViewModel();
 
                 return _viewModel;
             }

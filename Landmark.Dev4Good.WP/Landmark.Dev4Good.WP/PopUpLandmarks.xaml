@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Landmark.Dev4Good.WP.PopUpLandmarks"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+             mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Width="480" Height="500">
+        <TextBlock Text="Landmarks found" Margin="0, 100, 0, 0"  > </TextBlock>
+            <!--Single line list with text wrapping-->
+            <phone:LongListSelector Name="FoundLandmarks" Margin="0,0,-22,0" ItemsSource="{Binding FoundLandMarks}"  >
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0,-6,0,12">
+                            <TextBlock Text="{Binding Title}"
+											Foreground="{StaticResource PhoneBackgroundBrush}"
+										   TextWrapping="Wrap" 
+										   Style="{StaticResource PhoneTextExtraLargeStyle}" 
+										   FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>
+        <Button Name="btnSave" Content="Save" Click="BtnDone_Click"></Button>
+    </Grid>
+</UserControl>

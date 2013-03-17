@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{a0a7b97a-e8b4-4420-ad76-1a3a02f0c90b}" Title="Landmark.Dev4Good.WP" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Landmark.Dev4Good.WP author" Description="Sample description" Publisher="Landmark.Dev4Good.WP" PublisherID="{d81f55ed-823b-4e13-8e31-322bcb60cfb3}">
+  <App xmlns="" ProductID="{a0a7b97a-e8b4-4420-ad76-1a3a02f0c90b}" Title="Landmark" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Landmark.Dev4Good.WP author" Description="Sample description" Publisher="Landmark.Dev4Good.WP" PublisherID="{d81f55ed-823b-4e13-8e31-322bcb60cfb3}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -28,10 +28,14 @@
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
           <DeviceLockImageURI>
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

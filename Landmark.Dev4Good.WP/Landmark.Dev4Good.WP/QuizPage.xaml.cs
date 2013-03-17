@@ -63,30 +63,7 @@ namespace BarGame
             _curQIndex = idx - 1;
 
             _txtQtn.Text = q.Question;
-            _meVideo.Stop();
-            _meVideo.Source = null;
-            _imgMedia.Source = null;
-            _imgMedia.Visibility = Visibility.Collapsed;
-            _meVideo.Visibility = Visibility.Collapsed;
-
-            if (q.Qtype == "PIC")
-            {
-                _imgMedia.Visibility = Visibility.Visible;
-
-
-                var bi = new BitmapImage
-                             {
-                                 UriSource = new Uri("resources/" + q.MediaUrl, UriKind.Relative)
-                             };
-                _imgMedia.Stretch = Stretch.Fill;
-                _imgMedia.Source = bi;
-            }
-            if (q.Qtype == "VID")
-            {
-                _meVideo.Visibility = Visibility.Visible;
-                _meVideo.Source = new Uri("/resources/" + q.MediaUrl, UriKind.Relative);
-                _meVideo.Play();
-            }
+          
 
             _tA.Text = q.A;
             _tB.Text = q.B;
@@ -140,15 +117,7 @@ namespace BarGame
             _txtTime.Text = "";
             _scale.ScaleX = 0;
 
-            // Hide the media elements
-            _meVideo.Stop();
-            //_meVideo.Source = "";
-            //_imgMedia.Source = "";
-            //_imgMedia["Canvas.Left"] = -500;
-            _imgMedia.Visibility = Visibility.Collapsed;
-            //_meVideo["Canvas.Left"] = -500;
-            _meVideo.Visibility = Visibility.Collapsed;
-
+             
             // Remove the shown quiz from the array
             //TODO
             // Fade the UI away and reset the user interface interface
