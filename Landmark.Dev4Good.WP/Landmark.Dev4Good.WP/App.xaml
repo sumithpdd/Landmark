@@ -18,6 +18,49 @@
         
         <local:LocalizedStrings xmlns:local="clr-namespace:Landmark.Dev4Good.WP" x:Key="LocalizedStrings"/>
         <SolidColorBrush x:Key="ButtonBrush" Color="#4E9FC8"/>
+        
+        <Style x:Key="TaskNameStyle" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextLargeStyle}">
+            <Setter Property="Foreground" Value="#461B0D"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="NotesTextStyle" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextNormalStyle}">
+            <Setter Property="Foreground" Value="#463E3B"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+        <Style x:Key="TextBlockHeaderStyle" TargetType="TextBlock" >
+            <Setter Property="Foreground" Value="#463E3B"/>
+            <Setter Property="FontFamily" Value="PhoneFontFamilySemiLight"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="0,24,0,0"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style x:Key="TextBoxHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockHeaderStyle}">
+            <Setter Property="Margin" Value="12,24,0,-10"/>
+        </Style>
+        <Style x:Key="ListPickerHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockHeaderStyle}" >
+            <Setter Property="Margin" Value="12,24,0,-16"/>
+        </Style>
+        <ImageBrush ImageSource="/Assets\innerPagesBackground.jpg" x:Key="InnerPageBackground"/>
+        <Style TargetType="Image" x:Key="InnerPageLogoStyle">
+            <Setter Property="Source" Value="/Images/innerPageLogo.png"/>
+            <Setter Property="Margin" Value="24,13,0,0"/>
+            <Setter Property="Stretch" Value="None"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style BasedOn="{StaticResource PhoneTextNormalStyle}" TargetType="TextBlock" x:Key="PageTitleStyle">
+            <Setter Property="Foreground" Value="#461B0D"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style BasedOn="{StaticResource PhoneTextLargeStyle}" x:Key="PhoneTextLargeStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#461B0D"/>
+            <Setter Property="FontSize" Value="28"/>
+        </Style>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

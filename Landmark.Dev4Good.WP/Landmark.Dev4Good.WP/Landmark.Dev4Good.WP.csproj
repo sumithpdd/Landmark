@@ -96,6 +96,9 @@
     <Compile Include="Classes\Category.cs" />
     <Compile Include="Classes\DbContext.cs" />
     <Compile Include="Classes\LandmarkConstants.cs" />
+    <Compile Include="Congrats.xaml.cs">
+      <DependentUpon>Congrats.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateQuestion.xaml.cs">
       <DependentUpon>CreateQuestion.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Congrats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateQuestion.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -177,6 +184,9 @@
   <ItemGroup>
     <Content Include="Assets\innerPagesBackground.jpg" />
     <Content Include="Assets\place.png" />
+    <Resource Include="Assets\Congrats.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Assets\Tiles\Tile_map_explorer_159x159.png" />
     <Content Include="Assets\Tiles\Tile_map_explorer_336x336.png" />
     <Content Include="Assets\Tiles\Tile_map_explorer_691x336.png" />
